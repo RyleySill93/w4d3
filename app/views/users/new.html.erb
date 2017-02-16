@@ -1,0 +1,19 @@
+<h1>Sign up!</h1>
+<% if flash[:messages] %>
+   <ul>
+     <% flash[:messages].each do |message| %>
+       <li style="font-color: red"><%= message %></li>
+     <% end %>
+   </ul>
+ <% end %>
+<form action= '<%= users_url %>' method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Username</label>
+    <input type=text name=user[user_name]>
+  <br><br>
+  <label>Password</label>
+    <input type=password name=user[password]>
+  <br><br>
+
+  <input type="submit" value="Submit">
+</form>
